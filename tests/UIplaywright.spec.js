@@ -1,18 +1,19 @@
-const {test,expect}=require('@playwright/test')
+const {test,expect}=require('@playwright/test');
+const { only } = require('node:test');
 
-test('First Playwright Test' ,async({page})=>{
-    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
-    console.log(await page.title())
-    await page.locator('#username').fill('rahulshettyacademy');
-    await page.locator("[type='password']").fill('learning')
-    await page.locator("#signInBtn").click();
-   // console.log("maddy")
-   let locate=await page.locator("(//h4[@class='card-title']/a)[1]");
-    //console.log(await page.locator("[style*='block']").textContent());
+// test('First Playwright Test' ,async({page})=>{
+//     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+//     console.log(await page.title())
+//     await page.locator('#username').fill('rahulshettyacademy');
+//     await page.locator("[type='password']").fill('learning')
+//     await page.locator("#signInBtn").click();
+//    // console.log("maddy")
+//    let locate=await page.locator("(//h4[@class='card-title']/a)[1]");
+//     //console.log(await page.locator("[style*='block']").textContent());
 
-    console.log(await locate.textContent())
-});
-test('second demo playwright',async({page})=>{
+//     console.log(await locate.textContent())
+// });
+test.only('second demo playwright',async({page})=>{
     await page.goto("https://rahulshettyacademy.com/client")
     await page.locator("//a[contains(text(), 'Register here')]").click()
     // await page.locator("//h3[contains(text(), 'Let's Shop')]").click()
@@ -42,7 +43,7 @@ test('second demo playwright',async({page})=>{
 //           }
 //     }
    // await page.pause()
-});
+//});
 // test.only('@Client App login', async ({ page }) => {
 //     //js file- Login js, DashboardPage
 //     const email = "anshika@gmail.com";
